@@ -1,0 +1,24 @@
+[project]
+name = "time"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.12",
+    "httpx>=0.28.1",
+    "opentelemetry-api>=1.33.1",
+    "opentelemetry-distro>=0.54b1",
+    "opentelemetry-exporter-otlp>=1.33.1",
+    "opentelemetry-instrumentation>=0.54b1",
+    "opentelemetry-instrumentation-fastapi>=0.54b1",
+    "opentelemetry-instrumentation-logging>=0.54b1",
+    "prometheus-client>=0.22.1",
+    "prometheus-fastapi-instrumentator>=7.1.0",
+    "pydantic>=2.11.5",
+    "python-dateutil>=2.9.0.post0",
+    "python-multipart>=0.0.20",
+    "pytz>=2025.2",
+    "starlette>=0.46.2",
+    "uvicorn[standard]>=0.34.3",
+]

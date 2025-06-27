@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ghcr.io/blueswen/fastapi-jaeger/app:latest
+    environment:
+      OTEL_SERVICE_NAME: "fastapi-app"
+      OTEL_RESOURCE_ATTRIBUTES: "custom.data=custom_data"
