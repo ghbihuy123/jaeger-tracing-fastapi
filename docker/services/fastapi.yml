@@ -1,7 +1,7 @@
 services:
   server:
     build:
-      context: ../..
+      context: ../../fastapi
     container_name: time-server
     environment:
       MODE: "otlp-grpc"
@@ -19,7 +19,7 @@ services:
 
   app-b:
     build:
-      context: ../..
+      context: ../../fastapi
     # image: ghcr.io/blueswen/fastapi-jaeger/app:latest
     ports:
       - "8001:8000"
@@ -35,7 +35,7 @@ services:
       - wesley_network
 
   app-c:
-    build: ../..
+    build: ../../fastapi
     # image: ghcr.io/blueswen/fastapi-jaeger/app:latest
     ports:
       - "8002:8000"
