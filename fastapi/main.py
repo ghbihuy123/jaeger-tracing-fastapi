@@ -8,8 +8,8 @@ from datetime import datetime, timezone
 from typing import Literal
 import pytz
 from dateutil import parser as dateutil_parser
-from utils import PrometheusMiddleware, metrics, setting_otlp
-# from prometheus_fastapi_instrumentator import Instrumentator
+from utils import setting_otlp
+from prometheus_fastapi_instrumentator import Instrumentator
 from opentelemetry import trace
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from opentelemetry.instrumentation.logging import LoggingInstrumentor

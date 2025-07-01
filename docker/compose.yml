@@ -6,4 +6,4 @@ include:
   - ./services/grafana.yml
   - ./services/jaeger.yml
   - ./services/otel.yml
-  - ./services/time_service.yml
+  - ./services/fastapi.yml
