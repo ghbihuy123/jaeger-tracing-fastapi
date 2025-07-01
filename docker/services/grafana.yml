@@ -2,8 +2,6 @@ services:
   prometheus:
     image: prom/prometheus:v3.3.1
     container_name: prometheous
-    ports:
-      - "9090:9090"
     volumes:
       - ../etc/prometheus:/workspace
     command:
@@ -17,8 +15,6 @@ services:
 
   grafana:
     image: grafana/grafana:latest
-    ports:
-      - "3004:3000"
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin

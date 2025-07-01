@@ -8,9 +8,6 @@ services:
       - "--collector.otlp.enabled=true"
     environment: 
       - SAMPLING_CONFIG_TYPE=adaptive
-    ports:
-      - "4444:4317" # accept OpenTelemetry Protocol (OTLP) over gRPC
-      - "4445:4318" # accept OpenTelemetry Protocol (OTLP) over HTTP
     restart: on-failure
     depends_on:
       - cassandra
@@ -24,9 +21,6 @@ services:
     command:
       - "--cassandra.keyspace=jaeger_v1_dc1"
       - "--cassandra.servers=cassandra"
-    ports:
-      - "16686:16686"
-      - "16687:16687"
     restart: on-failure
     depends_on:
       - cassandra
