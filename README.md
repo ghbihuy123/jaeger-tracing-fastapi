@@ -20,26 +20,28 @@ This project demonstrates distributed tracing with [OpenTelemetry](https://opent
 
 ```
 asp_net/             # ASP.NET Core app (.NET)
+  ├── appsettings.Development.json
   ├── appsettings.json
+  ├── asp_net.csproj
   ├── Dockerfile
-  └── Program.cs
-fastapi/             # FastAPI app (Python)
-  ├── main.py
-  ├── utils.py
-  ├── Dockerfile
-  ├── requirements.txt
+  ├── Program.cs
+  ├── obj/
+  └── Properties/
 docker/
   ├── etc/
-  │   ├── collector/
-  │   ├── loki/
-  │   └── prometheus/
   └── services/
-      ├── aspnet.yml
-      ├── fastapi.yml
-      ├── grafana.yml
-      ├── jaeger.yml
-      ├── otel.yml
-      └── compose.yml
+  └── compose.yml
+fastapi/             # FastAPI app (Python)
+  ├── .python-version
+  ├── Dockerfile
+  ├── main.py
+  ├── pyproject.toml
+  ├── requirements.txt
+  ├── utils.py
+  ├── uv.lock
+.gitignore
+.dockerignore
+README.md
 ```
 
 ## Getting Started
