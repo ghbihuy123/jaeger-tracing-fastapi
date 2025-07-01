@@ -7,3 +7,4 @@ include:
   - ./services/jaeger.yml
   - ./services/otel.yml
   - ./services/fastapi.yml
+  - ./services/aspnet.yml

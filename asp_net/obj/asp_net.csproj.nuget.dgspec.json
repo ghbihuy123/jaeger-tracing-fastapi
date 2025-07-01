@@ -1,0 +1,90 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ghbihuy/project/jaeger-tracing-fastapi/asp_net/asp_net.csproj": {}
+  },
+  "projects": {
+    "/home/ghbihuy/project/jaeger-tracing-fastapi/asp_net/asp_net.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ghbihuy/project/jaeger-tracing-fastapi/asp_net/asp_net.csproj",
+        "projectName": "asp_net",
+        "projectPath": "/home/ghbihuy/project/jaeger-tracing-fastapi/asp_net/asp_net.csproj",
+        "packagesPath": "/home/ghbihuy/.nuget/packages/",
+        "outputPath": "/home/ghbihuy/project/jaeger-tracing-fastapi/asp_net/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ghbihuy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "[1.12.0, )"
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

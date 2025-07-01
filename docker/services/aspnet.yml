@@ -1,0 +1,11 @@
+services:
+  asp-app:
+    build:
+      context: ../../asp_net
+    container_name: asp-app
+    ports:
+      - 8005:8080
+    depends_on:
+      - otel-collector
+    networks:
+      - wesley_network
