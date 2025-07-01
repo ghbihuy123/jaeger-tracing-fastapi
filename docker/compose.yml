@@ -1,0 +1,9 @@
+networks:
+  wesley_network:
+    name: wesley_network
+
+include:
+  - ./services/grafana.yml
+  - ./services/jaeger.yml
+  - ./services/otel.yml
+  - ./services/time_service.yml

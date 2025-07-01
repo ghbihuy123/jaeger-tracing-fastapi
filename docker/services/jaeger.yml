@@ -1,0 +1,49 @@
+services:
+  jaeger-collector:
+    image: jaegertracing/jaeger-collector:1.57.0
+    container_name: jaeger-collector
+    command: 
+      - "--cassandra.keyspace=jaeger_v1_dc1"
+      - "--cassandra.servers=cassandra"
+      - "--collector.otlp.enabled=true"
+    environment: 
+      - SAMPLING_CONFIG_TYPE=adaptive
+    ports:
+      - "4444:4317" # accept OpenTelemetry Protocol (OTLP) over gRPC
+      - "4445:4318" # accept OpenTelemetry Protocol (OTLP) over HTTP
+    restart: on-failure
+    depends_on:
+      - cassandra
+      - cassandra-schema
+    networks:
+      - wesley_network
+
+  jaeger-query:
+    image: jaegertracing/jaeger-query:1.57.0
+    container_name: jaeger-query
+    command:
+      - "--cassandra.keyspace=jaeger_v1_dc1"
+      - "--cassandra.servers=cassandra"
+    ports:
+      - "16686:16686"
+      - "16687:16687"
+    restart: on-failure
+    depends_on:
+      - cassandra
+      - cassandra-schema
+      - jaeger-collector
+    networks:
+      - wesley_network
+
+  cassandra:
+    image: cassandra:4.1.4
+    container_name: cassandra
+    networks:
+      - wesley_network
+
+  cassandra-schema:
+    image: jaegertracing/jaeger-cassandra-schema:1.57.0
+    depends_on:
+      - cassandra
+    networks:
+      - wesley_network
