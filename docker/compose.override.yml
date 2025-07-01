@@ -1,4 +1,3 @@
-
 services:
   prometheus:
     ports:
@@ -10,8 +9,8 @@ services:
 
   jaeger-collector:
     ports:
-      - "4444:4317" # accept OpenTelemetry Protocol (OTLP) over gRPC
-      - "4445:4318" # accept OpenTelemetry Protocol (OTLP) over HTTP
+      - "4444:4317"  # accept OpenTelemetry Protocol (OTLP) over gRPC
+      - "4445:4318"  # accept OpenTelemetry Protocol (OTLP) over HTTP
 
   jaeger-query:
     ports:
@@ -20,9 +19,9 @@ services:
 
   otel-collector:
     ports:
-      - "4317:4317" # OTLP gRPC receiver
-      - "4318:4318" # OTLP http receiver
-      - "8889:8889" # Prometheus metrics exporter
+      - "4317:4317"  # OTLP gRPC receiver
+      - "4318:4318"  # OTLP http receiver
+      - "8889:8889"  # Prometheus metrics exporter
 
   asp-app:
     ports:
@@ -31,7 +30,7 @@ services:
   server:
     ports:
       - 8000:8000
-    
+
   app-b:
     ports:
       - "8001:8000"

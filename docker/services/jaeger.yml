@@ -2,11 +2,11 @@ services:
   jaeger-collector:
     image: jaegertracing/jaeger-collector:1.57.0
     container_name: jaeger-collector
-    command: 
+    command:
       - "--cassandra.keyspace=jaeger_v1_dc1"
       - "--cassandra.servers=cassandra"
       - "--collector.otlp.enabled=true"
-    environment: 
+    environment:
       - SAMPLING_CONFIG_TYPE=adaptive
     restart: on-failure
     depends_on:
