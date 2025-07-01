@@ -74,7 +74,9 @@ docker/
 
 3. **Access the services:**
    - **FastAPI**: [http://localhost:8000](http://localhost:8000)
-   - **ASP.NET**: [http://localhost:5000](http://localhost:5000)
+   - **FastAPI**: [http://localhost:8001](http://localhost:8001)
+   - **FastAPI**: [http://localhost:8002](http://localhost:8002)
+   - **ASP.NET**: [http://localhost:8005](http://localhost:8005)
    - **Jaeger UI**: [http://localhost:16686](http://localhost:16686)
 
 ## OpenTelemetry Integration
