@@ -1,0 +1,30 @@
+services:
+  prometheus:
+    image: prom/prometheus:v3.3.1
+    container_name: prometheous
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../etc/prometheus:/workspace
+    command:
+      - --config.file=/workspace/prometheus.yml
+      - --enable-feature=exemplar-storage
+    depends_on:
+      - otel-collector
+      - jaeger-collector
+    networks:
+      - wesley_network
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3004:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - wesley_network
+volumes:
+  grafana_data:

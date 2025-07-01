@@ -1,0 +1,51 @@
+services:
+  server:
+    build:
+      context: ../..
+    container_name: time-server
+    environment:
+      MODE: "otlp-grpc"
+      OTEL_SERVICE_NAME: "app-a"
+      OTLP_GRPC_ENDPOINT: "otel-collector:4317"
+      TARGET_ONE_HOST: "app-b"
+      TARGET_TWO_HOST: "app-c"
+    ports:
+      - 8000:8000
+    depends_on:
+      - otel-collector
+    networks:
+      - wesley_network
+
+
+  app-b:
+    build:
+      context: ../..
+    # image: ghcr.io/blueswen/fastapi-jaeger/app:latest
+    ports:
+      - "8001:8000"
+    environment:
+      MODE: "otlp-http"
+      OTEL_SERVICE_NAME: "app-b"
+      OTLP_HTTP_ENDPOINT: "http://otel-collector:4318/v1/traces"
+      TARGET_ONE_HOST: "app-b"
+      TARGET_TWO_HOST: "app-c"
+    depends_on:
+      - otel-collector
+    networks:
+      - wesley_network
+
+  app-c:
+    build: ../..
+    # image: ghcr.io/blueswen/fastapi-jaeger/app:latest
+    ports:
+      - "8002:8000"
+    environment:
+      MODE: "otlp-grpc"
+      OTEL_SERVICE_NAME: "app-c"
+      OTLP_GRPC_ENDPOINT: "jaeger-collector:4317"
+      TARGET_ONE_HOST: "app-b"
+      TARGET_TWO_HOST: "app-c"
+    depends_on:
+      - otel-collector
+    networks:
+      - wesley_network

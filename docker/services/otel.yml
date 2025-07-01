@@ -1,0 +1,17 @@
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.100.0
+    container_name: otel-collector
+    command:
+      - "--config=/conf/config.yaml"
+    volumes:
+      - ../etc/collector/otel-collector-config.yml:/conf/config.yaml
+    ports:
+      - "4317:4317" # OTLP gRPC receiver
+      - "4318:4318" # OTLP http receiver
+      - "8889:8889" # Prometheus metrics exporter
+    restart: on-failure
+    depends_on:
+      - jaeger-collector
+    networks:
+      - wesley_network
