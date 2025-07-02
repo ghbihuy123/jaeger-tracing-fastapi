@@ -16,7 +16,7 @@ services:
       - wesley_network
 
   jaeger-query:
-    image: jaegertracing/jaeger-query:1.57.0
+    image: jaegertracing/jaeger-query:1.70.0
     container_name: jaeger-query
     command:
       - "--cassandra.keyspace=jaeger_v1_dc1"
