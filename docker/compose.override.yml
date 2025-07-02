@@ -1,12 +1,4 @@
 services:
-  prometheus:
-    ports:
-      - "9090:9090"
-
-  grafana:
-    ports:
-      - "3004:3000"
-
   jaeger-collector:
     ports:
       - "4444:4317"  # accept OpenTelemetry Protocol (OTLP) over gRPC

@@ -3,7 +3,7 @@ networks:
     name: wesley_network
 
 include:
-  - ./services/grafana.yml
+  # - ./services/grafana.yml
   - ./services/jaeger.yml
   - ./services/otel.yml
   - ./services/fastapi.yml
